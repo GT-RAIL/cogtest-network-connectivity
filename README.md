@@ -7,7 +7,7 @@ Maintained by Jack Kolb (kolb@gatech.edu), copyright (C) 2021 RAIL Lab @ Georgia
 
 This test quantifies a user's network connectivity cognitive trait, or their ability to learn and apply an understanding of a hidden network connecting nodes. The user plays a series of puzzles where they are given a set of nodes, they watch the network propagate color from several example starting nodes, and then they identify the starting node to propagate color through the network in the least time steps. This requires them to understand how nodes are connected to solve each puzzle.
 
-We have demonstrated a link between performance in this pre-test and performance in robot tasks involving a user's understanding of networked robots.
+We have previous found a link between performance in this pre-test and performance in robot tasks involving a user's understanding of networked robots.
 
 
 ### How to Use ###
@@ -22,7 +22,7 @@ Recommended adjustments:
 
 Optional adjustments:
 1. In **Node.js**, you can change the node (square/triangle) height and stroke width in Node.constructor().
-2. In **sidePanel.js**, you can change the side panel contents at the various game stages (introduction, observation, response, end puzzle, end game)
+2. In **sidePanel.js**, you can change the side panel contents at the various game stages (introduction, observation, response, end puzzle, end game).
 
 
 ### Demonstration Image/Video ###
