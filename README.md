@@ -27,7 +27,7 @@ Optional adjustments:
 
 ### Demonstration Image/Video ###
 
-[![Demonstration image](nc_test_demo_image.png)]
+[![Demonstration image](img/nc_test_demo_image.png)]
 
 Click below to see a demonstration video (will open in YouTube):
 [![Demonstration video](https://img.youtube.com/vi/y-khfLEPP7s/maxresdefault.jpg)](https://youtu.be/y-khfLEPP7s)
