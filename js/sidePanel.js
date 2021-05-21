@@ -159,7 +159,7 @@ function sidePanelEndGame(score) {
     content.appendChild(text2);
 
     if (networks.showScore){
-        var text3 = document.createElement("div"); text3.innerHTML = "<br>Score: " + score;
+        var text3 = document.createElement("div"); text3.innerHTML = "<br>Score: " + score + "<br>Next link: http://4fe162699fc1.ngrok.io/tutorial?nextStage=4&mission=2";
         content.appendChild(text3);
     }
 
