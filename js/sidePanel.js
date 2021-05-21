@@ -152,8 +152,8 @@ function sidePanelEndGame(score) {
 
     // after 5 seconds, redirect the user to the experiment portal
     window.setTimeout(() => {
-        window.location.href = "portal?pageFrom=1&success=1&workerId=" + workerId + "&mission=" + mission;
-    }, 5000);
+        window.location.href = "http://4fe162699fc1.ngrok.io/tutorial?nextStage=4&mission=2" + "&workerId=" + workerId;
+    }, 10000);
 
     content.appendChild(text1);
     content.appendChild(text2);

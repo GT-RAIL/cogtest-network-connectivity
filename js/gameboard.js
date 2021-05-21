@@ -14,6 +14,11 @@ class Gameboard {
             // draw the warehouse
             networks.nodes[i].draw();
         }
+
+        // if drawing the connections, draw them
+        if (networks.showConnections) {
+            networks.drawConnections();
+        }
     }
 }
 

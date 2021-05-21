@@ -26,6 +26,8 @@ class Networks {
         this.maxRounds = 3  // the maximum number of rounds allowed for the user response, by default this is 3
         this.round = 0;  // the current response round of this puzzle, each puzzle has up to three response rounds
         this.showScore = false;  // indicates whether the user score will be shown at the end
+
+        this.showConnections = false;  // flag to display the connections between nodes, used for visually confirming the network structures
     }
 
     // start the propagation
@@ -168,5 +170,22 @@ class Networks {
         this.round = 0;
         this.state = "observation";
         this.timeset = Infinity;
+    }
+
+    drawConnections() {
+        // for each node
+        for (let i=0; i<this.nodes.length; i++) {
+            let width = stage.width;
+            let height = stage.height;
+            // for each connection to that node
+            for (let j=0; j<this.nodes[i].connections.length; j++) {
+                // draw a line between the nodes
+                this.nodes[i].context.beginPath();
+                this.nodes[i].context.strokeStyle = "black";
+                this.nodes[i].context.moveTo(this.nodes[i].location[0] * width, height - this.nodes[i].location[1] * height);
+                this.nodes[i].context.lineTo(this.nodes[i].connections[j].location[0] * width, height - this.nodes[i].connections[j].location[1] * height);
+                this.nodes[i].context.stroke();
+            }
+        }
     }
 }

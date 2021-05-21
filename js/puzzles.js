@@ -9,7 +9,7 @@ function emptyPuzzle() {
     networks.index();
 }
 
-// generates the puzzle
+// generates the puzzle (simple horizontal line)
 function generatePuzzle1() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.11, .5];
@@ -46,7 +46,7 @@ function generatePuzzle1() {
     networks.maxRounds = 3;  // set this to the maximum number of guesses the user can make
 }
 
-// generates the puzzle
+// generates the puzzle (simple arc)
 function generatePuzzle2() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.2, .5];
@@ -83,7 +83,7 @@ function generatePuzzle2() {
     networks.maxRounds = 3;
 }
 
-// generates the puzzle
+// generates the puzzle (complex sideways arc)
 function generatePuzzle3() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.1, .77];
@@ -186,7 +186,8 @@ function generatePuzzle3() {
     networks.maxRounds = 3;
 }
 
-// generates the puzzle
+
+// generates the puzzle (tri star)
 function generatePuzzle4() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.07, .92];
@@ -217,6 +218,7 @@ function generatePuzzle4() {
     var node_26_loc = [.94, .12];
     var node_27_loc = [.86, .12];
     var node_28_loc = [.78, .14];
+    
 
     // second create the node objects
     var node_1 = new Node(gameboard.context, node_1_loc);
@@ -319,7 +321,7 @@ function generatePuzzle4() {
     networks.maxRounds = 3;
 }
 
-// generates the puzzle
+// generates the puzzle (gold standard cross)
 function generatePuzzle5() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.2, .5];
@@ -366,7 +368,7 @@ function generatePuzzle5() {
     networks.maxRounds = 3;
 }
 
-// generates the puzzle
+// generates the puzzle (complicated triangles/squares)
 function generatePuzzle6() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.1, .77];
@@ -478,7 +480,7 @@ function generatePuzzle6() {
     networks.maxRounds = 3;
 }
 
-// generates the puzzle
+// generates the puzzle (large cross)
 function generatePuzzle7() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.05, .5];
@@ -533,7 +535,7 @@ function generatePuzzle7() {
     networks.maxRounds = 3;
 }
 
-// generates the puzzle
+// generates the puzzle (wavy cross)
 function generatePuzzle8() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.07, .5];
