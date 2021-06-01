@@ -1,4 +1,4 @@
-# RAIL Lab at Georgia Tech's Network Connectivity Pre-Test
+# RAIL Lab at Georgia Tech's Network Connectivity Cognitive Test
 
 Maintained by Jack Kolb (kolb@gatech.edu), copyright (C) 2021 RAIL Lab @ Georgia Tech
 
