@@ -1,11 +1,11 @@
-# RAIL Lab at Georgia Tech's Network Connectivity Cognitive Test
+# RAIL Lab at Georgia Tech's Network Inference Cognitive Test
 
 Maintained by Jack Kolb (kolb@gatech.edu), copyright (C) 2021 RAIL Lab @ Georgia Tech
 
 
 ### Overview ###
 
-This test quantifies a user's network connectivity cognitive trait, or their ability to learn and apply an understanding of a hidden network connecting nodes. The user plays a series of puzzles where they are given a set of nodes, they watch the network propagate color from several example starting nodes, and then they identify the starting node to propagate color through the network in the least time steps. This requires them to understand how nodes are connected to solve each puzzle.
+This test quantifies a user's network inference cognitive trait, or their ability to learn and apply an understanding of a hidden network connecting nodes. The user plays a series of puzzles where they are given a set of nodes, they watch the network propagate color from several example starting nodes, and then they identify the starting node to propagate color through the network in the least time steps. This requires them to understand how nodes are connected to solve each puzzle.
 
 We have previous found a link between performance in this pre-test and performance in robot tasks involving a user's understanding of networked robots.
 
