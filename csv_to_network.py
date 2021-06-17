@@ -1,3 +1,28 @@
+import random
+
+# goes through every node to find the lowest hop count (nothing fancy, just BFS)
+def determineOptimalHops(network):
+    lowest_hop_count = float("inf")
+
+    # for each node in the graph
+    for start_node in network:
+        flipped = [str(start_node)]
+        frontier = [str(start_node)]
+        hops = 0
+        # while the frontier isn't empty
+        while len(frontier) > 0:
+            new_frontier = []  # reset the frontier
+            for node in frontier:  # for each node in the old frontier
+                for connection in network[node]["connections"]:  # for each connection to each frontier node
+                    if str(connection) not in flipped and str(connection) not in new_frontier:  # if the connection is not already flipped color, add it to the new frontier
+                        new_frontier.append(str(connection))
+                flipped.append(str(node))  # flip this node
+            frontier = [x for x in new_frontier]  # set the new frontier
+            hops += 1  # increment hops
+        if hops < lowest_hop_count:  # if this node has less hops than the lowest hop count, update the lowest hop count
+            lowest_hop_count = hops
+    return lowest_hop_count
+
 output = ""
 
 # for each network, make the function
@@ -8,11 +33,11 @@ for network_name in ["Baseline", "Large", "Semilong", "Shortcut", "Small", "Spar
     network = {}
 
     # pull the network out of the network name file
-    with open(network_name + ".csv", "r") as f:
+    with open("Kilshin/" + network_name + ".csv", "r") as f:
         lines = f.readlines()
 
         # for each line after the first line (header)
-        for line in lines[1:-1]:
+        for line in lines[1:]:
             # split the line into a list of stats
             node_stats = line.split(",")
 
@@ -60,8 +85,8 @@ for network_name in ["Baseline", "Large", "Semilong", "Shortcut", "Small", "Spar
 
     # game parameters
     output += "\n    //  fifth set the game parameters"
-    output += "\n    networks.observation_nodes = [5, 15, 25];"
-    output += "\n    networks.optimalHops = 3;"
+    output += "\n    networks.observation_nodes = " + str(random.sample(range(0, len(list(network.keys()))), 3)) + ";"
+    output += "\n    networks.optimalHops = " + str(determineOptimalHops(network)) + ";"
     output += "\n    networks.maxRounds = 3;"
     output += "\n}"
 
@@ -71,4 +96,7 @@ for network_name in ["Baseline", "Large", "Semilong", "Shortcut", "Small", "Spar
 with open("generated/KilshinPuzzles.js", "w") as f:
     f.write(output)
 
-print("Completed generating network, output in " + network_name + ".js")
+print("Completed generating network, output in generated/KilshinPuzzles.js")
+
+
+        

@@ -31,6 +31,7 @@ function generatePuzzleKilshinBaseline() {
     var node_27_loc = [0.887485640702675, 0.26944601634723664];
     var node_28_loc = [0.9137180318363167, 0.41342874830552795];
     var node_29_loc = [0.9218312069866897, 0.5869895619645998];
+    var node_30_loc = [0.9339010846001771, 0.7442367153648258];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -63,6 +64,7 @@ function generatePuzzleKilshinBaseline() {
     var node_27 = new Node(gameboard.context, node_27_loc);
     var node_28 = new Node(gameboard.context, node_28_loc);
     var node_29 = new Node(gameboard.context, node_29_loc);
+    var node_30 = new Node(gameboard.context, node_30_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_1);
@@ -136,11 +138,11 @@ function generatePuzzleKilshinBaseline() {
     node_29.connect(node_30);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [22, 2, 13];
+    networks.optimalHops = 5;
     networks.maxRounds = 3;
 }
 
@@ -204,6 +206,7 @@ function generatePuzzleKilshinLarge() {
     var node_53_loc = [0.8841590663108533, 0.4377089176974083];
     var node_54_loc = [0.9556241039088859, 0.5441981914697513];
     var node_55_loc = [0.8981447379945758, 0.6486662657508179];
+    var node_56_loc = [0.8774679864060847, 0.7983262399091844];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -262,6 +265,7 @@ function generatePuzzleKilshinLarge() {
     var node_53 = new Node(gameboard.context, node_53_loc);
     var node_54 = new Node(gameboard.context, node_54_loc);
     var node_55 = new Node(gameboard.context, node_55_loc);
+    var node_56 = new Node(gameboard.context, node_56_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_1);
@@ -359,11 +363,11 @@ function generatePuzzleKilshinLarge() {
     node_55.connect(node_56);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30, node_31, node_32, node_33, node_34, node_35, node_36, node_37, node_38, node_39, node_40, node_41, node_42, node_43, node_44, node_45, node_46, node_47, node_48, node_49, node_50, node_51, node_52, node_53, node_54, node_55];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30, node_31, node_32, node_33, node_34, node_35, node_36, node_37, node_38, node_39, node_40, node_41, node_42, node_43, node_44, node_45, node_46, node_47, node_48, node_49, node_50, node_51, node_52, node_53, node_54, node_55, node_56];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [18, 36, 29];
+    networks.optimalHops = 8;
     networks.maxRounds = 3;
 }
 
@@ -399,6 +403,7 @@ function generatePuzzleKilshinSemilong() {
     var node_25_loc = [0.7671329553452103, 0.7330171620378955];
     var node_26_loc = [0.8702133874092334, 0.24074345773387967];
     var node_27_loc = [0.9258916057375806, 0.40382621420298875];
+    var node_28_loc = [0.9339620926300154, 0.6995472891132594];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -429,6 +434,7 @@ function generatePuzzleKilshinSemilong() {
     var node_25 = new Node(gameboard.context, node_25_loc);
     var node_26 = new Node(gameboard.context, node_26_loc);
     var node_27 = new Node(gameboard.context, node_27_loc);
+    var node_28 = new Node(gameboard.context, node_28_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_11);
@@ -475,11 +481,11 @@ function generatePuzzleKilshinSemilong() {
     node_24.connect(node_25);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [6, 27, 15];
+    networks.optimalHops = 5;
     networks.maxRounds = 3;
 }
 
@@ -516,6 +522,7 @@ function generatePuzzleKilshinShortcut() {
     var node_26_loc = [0.9005273274405518, 0.26484737056351293];
     var node_27_loc = [0.9739307521662469, 0.41169398974264765];
     var node_28_loc = [0.8703516681278912, 0.5534500329320552];
+    var node_29_loc = [0.9484381563304838, 0.7191985449840927];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -547,6 +554,7 @@ function generatePuzzleKilshinShortcut() {
     var node_26 = new Node(gameboard.context, node_26_loc);
     var node_27 = new Node(gameboard.context, node_27_loc);
     var node_28 = new Node(gameboard.context, node_28_loc);
+    var node_29 = new Node(gameboard.context, node_29_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_1);
@@ -599,11 +607,11 @@ function generatePuzzleKilshinShortcut() {
     node_28.connect(node_29);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [12, 13, 29];
+    networks.optimalHops = 6;
     networks.maxRounds = 3;
 }
 
@@ -621,6 +629,7 @@ function generatePuzzleKilshinSmall() {
     var node_7_loc = [0.5301478060466941, 0.6201029123135897];
     var node_8_loc = [0.5867794626639056, 0.8498583324315028];
     var node_9_loc = [0.8807889078954844, 0.3805001545852771];
+    var node_10_loc = [0.8371389194042708, 0.5633031259753779];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -633,6 +642,7 @@ function generatePuzzleKilshinSmall() {
     var node_7 = new Node(gameboard.context, node_7_loc);
     var node_8 = new Node(gameboard.context, node_8_loc);
     var node_9 = new Node(gameboard.context, node_9_loc);
+    var node_10 = new Node(gameboard.context, node_10_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_3);
@@ -648,11 +658,11 @@ function generatePuzzleKilshinSmall() {
     node_9.connect(node_10);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [3, 2, 5];
+    networks.optimalHops = 4;
     networks.maxRounds = 3;
 }
 
@@ -689,6 +699,7 @@ function generatePuzzleKilshinSparse() {
     var node_26_loc = [0.9005273274405518, 0.26484737056351293];
     var node_27_loc = [0.9739307521662469, 0.41169398974264765];
     var node_28_loc = [0.8703516681278912, 0.5534500329320552];
+    var node_29_loc = [0.9484381563304838, 0.7191985449840927];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -720,6 +731,7 @@ function generatePuzzleKilshinSparse() {
     var node_26 = new Node(gameboard.context, node_26_loc);
     var node_27 = new Node(gameboard.context, node_27_loc);
     var node_28 = new Node(gameboard.context, node_28_loc);
+    var node_29 = new Node(gameboard.context, node_29_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_1);
@@ -769,11 +781,11 @@ function generatePuzzleKilshinSparse() {
     node_28.connect(node_29);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [25, 0, 19];
+    networks.optimalHops = 7;
     networks.maxRounds = 3;
 }
 
@@ -811,6 +823,7 @@ function generatePuzzleKilshinTree() {
     var node_27_loc = [0.887485640702675, 0.26944601634723664];
     var node_28_loc = [0.9137180318363167, 0.41342874830552795];
     var node_29_loc = [0.9218312069866897, 0.5869895619645998];
+    var node_30_loc = [0.9339010846001771, 0.7442367153648258];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -843,6 +856,7 @@ function generatePuzzleKilshinTree() {
     var node_27 = new Node(gameboard.context, node_27_loc);
     var node_28 = new Node(gameboard.context, node_28_loc);
     var node_29 = new Node(gameboard.context, node_29_loc);
+    var node_30 = new Node(gameboard.context, node_30_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_1);
@@ -877,11 +891,11 @@ function generatePuzzleKilshinTree() {
     node_29.connect(node_30);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [24, 26, 2];
+    networks.optimalHops = 10;
     networks.maxRounds = 3;
 }
 
@@ -919,6 +933,7 @@ function generatePuzzleKilshinTreeShortcut() {
     var node_27_loc = [0.8952818004547546, 0.2803161858107547];
     var node_28_loc = [0.9385426675586657, 0.42426912658855837];
     var node_29_loc = [0.9494418422493675, 0.5951548276339684];
+    var node_30_loc = [0.915421108165545, 0.7504504202471026];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -951,6 +966,7 @@ function generatePuzzleKilshinTreeShortcut() {
     var node_27 = new Node(gameboard.context, node_27_loc);
     var node_28 = new Node(gameboard.context, node_28_loc);
     var node_29 = new Node(gameboard.context, node_29_loc);
+    var node_30 = new Node(gameboard.context, node_30_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_1);
@@ -989,11 +1005,11 @@ function generatePuzzleKilshinTreeShortcut() {
     node_29.connect(node_30);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [22, 24, 16];
+    networks.optimalHops = 8;
     networks.maxRounds = 3;
 }
 
@@ -1031,6 +1047,7 @@ function generatePuzzleKilshinTreeShuffle() {
     var node_27_loc = [0.5010857635337009, 0.6526206169653596];
     var node_28_loc = [0.6578507858870408, 0.10457015194233454];
     var node_29_loc = [0.13125242660465153, 0.21923064865243963];
+    var node_30_loc = [0.27090810747938604, 0.2625716856756255];
 
     // second create the node objects
     var node_0 = new Node(gameboard.context, node_0_loc);
@@ -1063,6 +1080,7 @@ function generatePuzzleKilshinTreeShuffle() {
     var node_27 = new Node(gameboard.context, node_27_loc);
     var node_28 = new Node(gameboard.context, node_28_loc);
     var node_29 = new Node(gameboard.context, node_29_loc);
+    var node_30 = new Node(gameboard.context, node_30_loc);
 
     // third connect the nodes, running a connection from A->B will also create the connection from B->A
     node_0.connect(node_1);
@@ -1097,11 +1115,11 @@ function generatePuzzleKilshinTreeShuffle() {
     node_29.connect(node_30);
 
     // fourth add the nodes to the network
-    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29];
+    networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [5, 15, 25];
-    networks.optimalHops = 3;
+    networks.observation_nodes = [28, 17, 9];
+    networks.optimalHops = 10;
     networks.maxRounds = 3;
 }
 
