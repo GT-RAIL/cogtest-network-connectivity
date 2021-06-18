@@ -141,7 +141,7 @@ function generatePuzzleKilshinBaseline() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [22, 2, 13];
+    networks.observationNodes = [30, 13, 8];
     networks.optimalHops = 5;
     networks.maxRounds = 3;
 }
@@ -366,7 +366,7 @@ function generatePuzzleKilshinLarge() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30, node_31, node_32, node_33, node_34, node_35, node_36, node_37, node_38, node_39, node_40, node_41, node_42, node_43, node_44, node_45, node_46, node_47, node_48, node_49, node_50, node_51, node_52, node_53, node_54, node_55, node_56];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [18, 36, 29];
+    networks.observationNodes = [10, 50, 46];
     networks.optimalHops = 8;
     networks.maxRounds = 3;
 }
@@ -484,7 +484,7 @@ function generatePuzzleKilshinSemilong() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [6, 27, 15];
+    networks.observationNodes = [12, 0, 16];
     networks.optimalHops = 5;
     networks.maxRounds = 3;
 }
@@ -610,7 +610,7 @@ function generatePuzzleKilshinShortcut() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [12, 13, 29];
+    networks.observationNodes = [1, 24, 23];
     networks.optimalHops = 6;
     networks.maxRounds = 3;
 }
@@ -661,7 +661,7 @@ function generatePuzzleKilshinSmall() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [3, 2, 5];
+    networks.observationNodes = [1, 6, 4];
     networks.optimalHops = 4;
     networks.maxRounds = 3;
 }
@@ -784,7 +784,7 @@ function generatePuzzleKilshinSparse() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [25, 0, 19];
+    networks.observationNodes = [3, 18, 7];
     networks.optimalHops = 7;
     networks.maxRounds = 3;
 }
@@ -894,7 +894,7 @@ function generatePuzzleKilshinTree() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [24, 26, 2];
+    networks.observationNodes = [13, 26, 1];
     networks.optimalHops = 10;
     networks.maxRounds = 3;
 }
@@ -1008,7 +1008,7 @@ function generatePuzzleKilshinTreeShortcut() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [22, 24, 16];
+    networks.observationNodes = [14, 24, 11];
     networks.optimalHops = 8;
     networks.maxRounds = 3;
 }
@@ -1118,7 +1118,7 @@ function generatePuzzleKilshinTreeShuffle() {
     networks.nodes = [node_0, node_1, node_2, node_3, node_4, node_5, node_6, node_7, node_8, node_9, node_10, node_11, node_12, node_13, node_14, node_15, node_16, node_17, node_18, node_19, node_20, node_21, node_22, node_23, node_24, node_25, node_26, node_27, node_28, node_29, node_30];
 
     //  fifth set the game parameters
-    networks.observation_nodes = [28, 17, 9];
+    networks.observationNodes = [7, 27, 28];
     networks.optimalHops = 10;
     networks.maxRounds = 3;
 }

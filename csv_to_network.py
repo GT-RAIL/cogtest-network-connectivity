@@ -85,7 +85,7 @@ for network_name in ["Baseline", "Large", "Semilong", "Shortcut", "Small", "Spar
 
     # game parameters
     output += "\n    //  fifth set the game parameters"
-    output += "\n    networks.observation_nodes = " + str(random.sample(range(0, len(list(network.keys()))), 3)) + ";"
+    output += "\n    networks.observationNodes = " + str(random.sample(range(0, len(list(network.keys()))), 3)) + ";"
     output += "\n    networks.optimalHops = " + str(determineOptimalHops(network)) + ";"
     output += "\n    networks.maxRounds = 3;"
     output += "\n}"
@@ -93,10 +93,10 @@ for network_name in ["Baseline", "Large", "Semilong", "Shortcut", "Small", "Spar
     # double newline at end
     output += "\n\n\n"
 
-with open("generated/KilshinPuzzles.js", "w") as f:
+with open("Kilshin/KilshinPuzzles.js", "w") as f:
     f.write(output)
 
-print("Completed generating network, output in generated/KilshinPuzzles.js")
+print("Completed generating network, output in Kilshin/KilshinPuzzles.js")
 
 
         
