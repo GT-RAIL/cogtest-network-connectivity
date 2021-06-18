@@ -25,7 +25,7 @@ class Networks {
         
         this.maxRounds = 3  // the maximum number of rounds allowed for the user response, by default this is 3
         this.round = 0;  // the current response round of this puzzle, each puzzle has up to three response rounds
-        this.showScore = false;  // indicates whether the user score will be shown at the end
+        this.showScore = true;  // indicates whether the user score will be shown at the end
 
         this.showConnections = false;  // flag to display the connections between nodes, used for visually confirming the network structures
     }
