@@ -8,7 +8,7 @@ def determineOptimalHops(network):
     for start_node in network:
         flipped = [str(start_node)]
         frontier = [str(start_node)]
-        hops = 0
+        hops = -1
         # while the frontier isn't empty
         while len(frontier) > 0:
             new_frontier = []  # reset the frontier
