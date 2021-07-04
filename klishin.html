@@ -90,7 +90,7 @@
       let possiblePuzzles = [generatePuzzle4, generatePuzzle6, generatePuzzle7, generatePuzzle8, generatePuzzleKlishinSmall, generatePuzzleKlishinBaseline, generatePuzzleKlishinLarge, generatePuzzleKlishinSparse, generatePuzzle5, generatePuzzleKlishinShortcut, generatePuzzleKlishinTree, generatePuzzleKlishinTreeShortcut, generatePuzzleKlishinTreeShuffle, generatePuzzleKlishinSemilong, generatePuzzleKlishinHalo];
       
       // initialize the start puzzles as training puzzles
-      networks.puzzles = [];//[generatePuzzle1, generatePuzzle2, generatePuzzle3];
+      networks.puzzles = [generatePuzzle1, generatePuzzle2, generatePuzzle3];
 
       // shuffle the test puzzles for counterbalancing
       var shuffledPuzzles = possiblePuzzles.slice(0), i = possiblePuzzles.length, temp, index;
