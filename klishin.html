@@ -1,4 +1,4 @@
-<!-- THIS IS JUST A COPY PASTE OF INDEX.HTML AS OF JUN 17 2021, USING ANDREI KILSHIN'S PUZZLES -->
+<!-- THIS IS JUST A COPY PASTE OF INDEX.HTML AS OF JUN 17 2021, USING ANDREI KLISHIN'S PUZZLES -->
 
 <!-- If you are looking to set parameters for your own work, check out the <script> section -->
 <!-- To add your own puzzles, see puzzles.js -->
@@ -34,7 +34,7 @@
   <script src="js/Networks.js"></script>
   <script src="js/Node.js"></script>
   <script src="js/puzzles.js"></script>
-  <script src="Kilshin/KilshinPuzzles.js"></script>
+  <script src="Klishin/KlishinPuzzles.js"></script>
   <script src="js/sidePanel.js"></script>
   <script src="js/utility.js"></script>
 
@@ -71,7 +71,7 @@
       var stage = document.getElementById("Canvas");  // the gameboard stage (for drawing)
       var context = stage.getContext("2d");  // the gameboard context (for drawing)
 
-      var workerId = "{{ worker_id }}";  // used in the RAIL@GT package to track the user's ID, you can change this if you are using a dynamic webserver and are passing in a user ID
+      var workerId = "";  // used in the RAIL@GT package to track the user's ID, you can change this if you are using a dynamic webserver and are passing in a user ID
       var mission = "{{ mission }}";  // used in the RAIL@GT package to track the experiment's endgoal robot mission, you can change this if you are doing something similar, or you can remove it
 
       var scores = [];  // will contain the score of each stage
@@ -85,9 +85,31 @@
       // initialize the puzzles, you can add your own puzzles in gameboard.js
       // SET THIS networks.puzzles below to the puzzles you wish to include in your experiment, they will appear in the order of the array
       //networks.puzzles = [generatePuzzle1, generatePuzzle2, generatePuzzle3, generatePuzzle4, generatePuzzle5, generatePuzzle6, generatePuzzle7, generatePuzzle8];
-      networks.puzzles = [generatePuzzle1, generatePuzzle2, generatePuzzleKilshinBaseline, generatePuzzleKilshinSparse, generatePuzzleKilshinSmall, generatePuzzleKilshinShortcut, generatePuzzle5, generatePuzzleKilshinTree, generatePuzzleKilshinTreeShortcut, generatePuzzleKilshinTreeShuffle, generatePuzzleKilshinSemilong, generatePuzzleKilshinLarge];
+
+      // make a list of the possible puzzles
+      let possiblePuzzles = [generatePuzzle4, generatePuzzle6, generatePuzzle7, generatePuzzle8, generatePuzzleKlishinSmall, generatePuzzleKlishinBaseline, generatePuzzleKlishinLarge, generatePuzzleKlishinSparse, generatePuzzle5, generatePuzzleKlishinShortcut, generatePuzzleKlishinTree, generatePuzzleKlishinTreeShortcut, generatePuzzleKlishinTreeShuffle, generatePuzzleKlishinSemilong, generatePuzzleKlishinHalo];
+      
+      // initialize the start puzzles as training puzzles
+      networks.puzzles = [];//[generatePuzzle1, generatePuzzle2, generatePuzzle3];
+
+      // shuffle the test puzzles for counterbalancing
+      var shuffledPuzzles = possiblePuzzles.slice(0), i = possiblePuzzles.length, temp, index;
+
+      while (i--) {
+        index = Math.floor((i+1) * Math.random());
+        temp = shuffledPuzzles[index];
+        shuffledPuzzles[index] = shuffledPuzzles[i];
+        shuffledPuzzles[i] = temp;
+      }
+
+      // add the shuffled puzzles to the network puzzles
+      networks.puzzles = networks.puzzles.concat(shuffledPuzzles);
+      
       networks.propagationPeriod = 500;  // SET THIS to the desired propagation time step, 500 means 500ms per time step
       networks.showScore = true;  // SET THIS to whether you wish the show the user their score at the end of the game
+      networks.showTriangles = false;  // SET THIS to whether you wish to display some nodes as triangles, in some networks
+      networks.showOptimalNodes = true;  // SET THIS to whether you wish to display the optimal nodes
+      gameboard.askId = true;  // SET THIS to whether you wish to ask for the user's Mechanical Turk ID
 
       // loads the next puzzle into the network (in this initial case, it loads the first puzzle)
       networks.nextPuzzle();

@@ -43,6 +43,7 @@ function generatePuzzle1() {
     // fifth set the game parameters
     networks.observationNodes = [0, 2, 5];  // set this to the indexed nodes used in the observation stage
     networks.optimalHops = 4;  // set this to the optimal number of hops (you'll need to figure that out yourself)
+    networks.optimalNodes = [2];
     networks.maxRounds = 3;  // set this to the maximum number of guesses the user can make
 }
 
@@ -80,6 +81,7 @@ function generatePuzzle2() {
     // fifth set the game parameters
     networks.observationNodes = [0, 1, 2];
     networks.optimalHops = 4;
+    networks.optimalNodes = [2];
     networks.maxRounds = 3;
 }
 
@@ -183,6 +185,7 @@ function generatePuzzle3() {
     // fifth set the game parameters
     networks.observationNodes = [5, 15, 22];
     networks.optimalHops = 9;
+    networks.optimalNodes = [15];
     networks.maxRounds = 3;
 }
 
@@ -318,6 +321,7 @@ function generatePuzzle4() {
     // fifth set the game parameters
     networks.observationNodes = [5, 15, 22];
     networks.optimalHops = 6;
+    networks.optimalNodes = [8];
     networks.maxRounds = 3;
 }
 
@@ -365,6 +369,7 @@ function generatePuzzle5() {
     // fifth set the game parameters
     networks.observationNodes = [0, 2, 5];
     networks.optimalHops = 3;
+    networks.optimalNodes = [2];
     networks.maxRounds = 3;
 }
 
@@ -401,31 +406,31 @@ function generatePuzzle6() {
     // second create the node objects
     var node_1 = new Node(gameboard.context, node_1_loc);
     var node_2 = new Node(gameboard.context, node_2_loc);
-    node_2.triangle = true;
+    node_2.triangle = networks.showTriangles;
     var node_3 = new Node(gameboard.context, node_3_loc);
     var node_4 = new Node(gameboard.context, node_4_loc);
     var node_5 = new Node(gameboard.context, node_5_loc);
     var node_6 = new Node(gameboard.context, node_6_loc);
     var node_7 = new Node(gameboard.context, node_7_loc);
     var node_8 = new Node(gameboard.context, node_8_loc);
-    node_8.triangle = true;
+    node_8.triangle = networks.showTriangles;
     var node_9 = new Node(gameboard.context, node_9_loc);
     var node_10 = new Node(gameboard.context, node_10_loc);
-    node_10.triangle = true;
+    node_10.triangle = networks.showTriangles;
     var node_11 = new Node(gameboard.context, node_11_loc);
     var node_12 = new Node(gameboard.context, node_12_loc);
     var node_13 = new Node(gameboard.context, node_13_loc);
     var node_14 = new Node(gameboard.context, node_14_loc);
     var node_15 = new Node(gameboard.context, node_15_loc);
-    node_15.triangle = true;
+    node_15.triangle = networks.showTriangles;
     var node_16 = new Node(gameboard.context, node_16_loc);
     var node_17 = new Node(gameboard.context, node_17_loc);
     var node_18 = new Node(gameboard.context, node_18_loc);
     var node_19 = new Node(gameboard.context, node_19_loc);
-    node_19.triangle = true;
+    node_19.triangle = networks.showTriangles;
     var node_20 = new Node(gameboard.context, node_20_loc);
     var node_21 = new Node(gameboard.context, node_21_loc);
-    node_21.triangle = true;
+    node_21.triangle = networks.showTriangles;
     var node_22 = new Node(gameboard.context, node_22_loc);
     var node_23 = new Node(gameboard.context, node_23_loc);
     var node_24 = new Node(gameboard.context, node_24_loc);
@@ -477,6 +482,7 @@ function generatePuzzle6() {
     // fifth set the game parameters
     networks.observationNodes = [5, 10, 22];
     networks.optimalHops = 7;
+    networks.optimalNodes = [15];
     networks.maxRounds = 3;
 }
 
@@ -532,6 +538,7 @@ function generatePuzzle7() {
     // fifth set the game parameters
     networks.observationNodes = [2, 4, 8];
     networks.optimalHops = 7;
+    networks.optimalNodes = [6];
     networks.maxRounds = 3;
 }
 
@@ -587,5 +594,6 @@ function generatePuzzle8() {
     // fifth set the game parameters
     networks.observationNodes = [2, 4, 8];
     networks.optimalHops = 7;
+    networks.optimalNodes = [6];
     networks.maxRounds = 3;
 }

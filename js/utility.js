@@ -3,6 +3,8 @@
 // simple logging function, sends the given data to our webserver, you will probably want to change this for your own purposes as it is set up for our RAIL@GT experiment
 function log(data) {
     data["worker-id"] = workerId;  // include the worker ID
+    console.log("LOG", data);
+    
     return fetch("/logging", {method: "POST", body: JSON.stringify(data)});
 }
 
@@ -37,7 +39,7 @@ function mouseHandler(event) {
                     networks.frontierNodes = [i];
                     networks.timeset = Date.now() - networks.propagationPeriod;
                     // log which node was clicked
-                    log({"stage": "networks", "action": "node selected", "object": i});
+                    log({"stage": "networks", "puzzle": networks.puzzleName, "action": "node selected", "object": networks.nodes[i].index});
                 }
                 // stop checking nodes, since we know which one the user clicked
                 break;

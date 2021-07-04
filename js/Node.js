@@ -15,6 +15,7 @@ class Node {
         this.green = false;
 
         this.triangle = false;  // indicates whether the node is a triangle, false by default
+        this.optimalNode = false;  // indicates whether the node is an optimal node, in which case color it purple
     }
 
     // flips the node, will display it blue
@@ -48,7 +49,7 @@ class Node {
     // draws the node on the gameboard
     draw() {
         // determine the node color
-        var color = this.green ? "lightgreen" : this.index == networks.selectedNode ? "goldenrod" : this.flipped ? "blue" : "red";
+        var color = this.green ? "lightgreen" : this.index == networks.selectedNode ? "goldenrod" : this.flipped ? "blue" : this.optimalNode ? "purple" : "red";
         // if the node is a triangle, draw a triangle
         if (this.triangle) {
             this.drawTriangle(this.context, this.location[0] * this.context.canvas.width, (1-this.location[1]) * this.context.canvas.height, this.height, "", color);

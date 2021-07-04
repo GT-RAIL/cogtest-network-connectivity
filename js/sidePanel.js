@@ -17,8 +17,9 @@ function sidePanelIntroduction() {
     var text1 = document.createElement("div"); text1.innerHTML = "<br>Welcome! In this game you will figure out how squares are connected in a set of " + networks.puzzles.length + " puzzles.";
     var text2 = document.createElement("div"); text2.innerHTML = "<br>A hidden network connects all the squares. When a square is selected, the squares connected to it will flip colors. Then the squares connected to those squares will flip. And so on until the entire network has flipped.";
     var text3 = document.createElement("div"); text3.innerHTML = "<br>You will first watch this happen for several different starting squares, so you can learn the hidden network.";
-    var text4 = document.createElement("div"); text4.innerHTML = "<br>Then you will choose the square that flips the network in the least number of steps.";
-    var text5 = document.createElement("div"); text5.innerHTML = "<br>When you are ready, click \"Next\".";
+    var text4 = document.createElement("div"); text4.innerHTML = "<br>Then you will choose the square that flips the network in the least steps.";
+    var text5 = document.createElement("div"); text5.innerHTML = "<br>When you are ready, enter your Mechanical Turk ID below:";
+    
 
     content.appendChild(text1);
     content.appendChild(text2);
@@ -26,9 +27,19 @@ function sidePanelIntroduction() {
     content.appendChild(text4);
     content.appendChild(text5);
 
-    document.getElementById("networks-next-button").style.display = "block";
+    if (gameboard.askId) {
+        var workerIdInput = document.createElement("input"); workerIdInput.type = "text"; workerIdInput.id = "worker-id-input";
+        content.appendChild(workerIdInput);
+        workerIdInput.oninput = () => {
+            document.getElementById("networks-next-button").style.display = "block";
+            workerId = workerIdInput.value;
+        };
+    }
+
+    document.getElementById("networks-next-button").style.display = "none";
     document.getElementById("networks-next-button").innerHTML = "Next";
 
+    
     // when the "Next" button is clicked, display the observation side panel
     document.getElementById("networks-next-button").onclick = function () {
         log({"stage": "networks", "action": "side-panel-click", "object": "next button introduction"});
@@ -39,7 +50,7 @@ function sidePanelIntroduction() {
 // side panel for the user observation state
 function sidePanelObservation() {
     // log that the user is seeing this panel
-    log({"stage": "networks", "action": "side-panel-state", "object": "showing tutorial panel 1"});
+    log({"stage": "networks", "action": "side-panel-state", "object": "showing observation panel"});
 
     var title = document.getElementById("SidePanelTitle");
     title.innerHTML = "<b>Observation</b>";
@@ -148,7 +159,7 @@ function sidePanelEndGame(score) {
     document.getElementById("SidePanel").style.backgroundColor = "lightyellow";
 
     var text1 = document.createElement("div"); text1.innerHTML = "<br>Congratulations! You completed this minigame!";
-    var text2 = document.createElement("div"); text2.innerHTML = "<br>You will now be redirected to the experiment portal.";
+    var text2 = document.createElement("div"); text2.innerHTML = "<br>Please enter the following code into Mechanical Turk: <b>102030</b>. You can now close this tab.";
 
     // after 5 seconds, redirect the user to the experiment portal
     window.setTimeout(() => {

@@ -4,12 +4,14 @@ class Networks {
 
     constructor(startingNetwork) {
         this.puzzle = startingNetwork;  // the index of the puzzle (network)
+        this.puzzleName = "none";  // the name of the puzzle, for logging
         this.propagationPeriod = 750;  // the wait time (in miliseconds) between propagations, by default this is 750
 
         this.state = "observation";  // the state: observation (user watches network examples), response (user chooses a node to propagate)
         this.propagating = false;  // indicates whether the network is propagating, users can only select a node if this is false
         this.endRound = false;  // indicates whether this round has ended (nodes turn green)
 
+        this.selections = [];  // the selected nodes for the puzzle
         this.selectedNode = null;  // the index of the selected root node
 
         this.puzzles = [];  // list of functions to generate puzzles (function[])
@@ -22,12 +24,15 @@ class Networks {
         this.scores = [];  // list of the scores from this puzzle (Int[]), scores are the number of hops by the user's selection, minus the optimal number of hops
         this.hops = 0;  // the number of hops in this round of propagation
         this.optimalHops = 0;  // the optimal number of hops for this puzzle
+        this.optimalNodes = [];  // the optimal nodes, for the debugging features that highlights them
         
         this.maxRounds = 3  // the maximum number of rounds allowed for the user response, by default this is 3
         this.round = 0;  // the current response round of this puzzle, each puzzle has up to three response rounds
         this.showScore = false;  // indicates whether the user score will be shown at the end
 
         this.showConnections = false;  // flag to display the connections between nodes, used for visually confirming the network structures
+        this.showTriangles = true;  // flag to display some networks as triangles, as desired
+        this.showOptimalNodes = false;  // flag to display the optimal nodes in purple, for debugging
     }
 
     // start the propagation
@@ -105,6 +110,7 @@ class Networks {
         // if we are in the user response state, record the score
         if (this.state == "response") {
             this.scores.push(this.hops - this.optimalHops);
+            this.selections.push(this.selectedNode);
             this.round += 1;
         }
 
@@ -113,22 +119,23 @@ class Networks {
             this.nodes[i].unflip();
         }
 
-        // reset the propagation variables
-        this.seenNodes = [];
-        this.frontierNodes = [];
-        this.selectedNode = null;
-        
         // if we are in the user response state and the puzzle is complete (max rounds or optimal hops achieved), end the puzzle
         if (this.state == "response" && (this.round == this.maxRounds || this.hops == this.optimalHops)) {
             // if there are spare rounds, add 0 scores to the scores so it's a consistent maxRounds scores per puzzle
             if (this.round < this.maxRounds) {
                 for (var i=this.round; i<this.maxRounds; i++) {
-                    this.scores.push(0)
+                    this.scores.push(0);
+                    this.selections.push(-1);
                 }
             }
             this.complete();  // set the nodes to completion
         }
 
+        // reset the propagation variables
+        this.seenNodes = [];
+        this.frontierNodes = [];
+        this.selectedNode = null;
+        
         // if we are in the observation state and have no more observations to see, switch to the response state
         if (this.state == "observation" && this.observationNodes.length == 0) {
             this.state = "response";
@@ -146,6 +153,9 @@ class Networks {
         for (var i=0; i<this.nodes.length; i++) {
             this.nodes[i].complete();
         }
+
+        log({"stage": "networks", "action": "puzzle complete", "name": this.puzzleName, "selections": this.selections});  // log the user's puzzle scores
+
         sidePanelPuzzleComplete();  // display the round complete side panel
     }
 
@@ -153,6 +163,11 @@ class Networks {
     nextPuzzle() {
         if (this.puzzle < this.puzzles.length) {  // if we still have puzzles left, generate the next one
             this.puzzles[this.puzzle]();  // run the function that sets up the next puzzle, established in index.html
+            // set up the optimal nodes
+            for (let i = 0; i < this.optimalNodes.length; i++) {
+                this.nodes[this.optimalNodes[i]].optimalNode = true;
+            }
+            this.puzzleName = this.puzzles[this.puzzle].name;
             this.propagating = true;  // start the next puzzle
             this.index();  // set the .index class variable of each node to their index in the networks.nodes array
             sidePanelObservation();  // display the observation side panel
@@ -160,7 +175,7 @@ class Networks {
         else {  // otherwise end the game
             emptyPuzzle();  // set the gameboard to blank
             let score = this.scores.reduce((a, b) => a + b, 0);  // calculate the user's score
-            log({"stage": "networks", "action": "complete", "score": score, "scores": this.scores});  // log the user's total score and scores list
+            log({"stage": "networks", "action": "game complete", "score": score, "scores": this.scores});  // log the user's total score and scores list
             sidePanelEndGame(score);  // display the end game side panel
         }
 
@@ -170,6 +185,7 @@ class Networks {
         this.round = 0;
         this.state = "observation";
         this.timeset = Infinity;
+        this.selections = [];
     }
 
     drawConnections() {

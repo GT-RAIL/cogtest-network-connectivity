@@ -40,6 +40,12 @@ button.side-panel-button {
     font-size: 18pt;
 }
 
+input {
+    width: 100%;
+    height: 20pt;
+    font-size: 15pt;
+}
+
 body {
     background-color: whitesmoke;
     font-family: 'Roboto', sans-serif;

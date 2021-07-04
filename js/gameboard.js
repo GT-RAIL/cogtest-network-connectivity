@@ -5,6 +5,7 @@
 class Gameboard {
     constructor() {
         this.context = context;
+        this.askId = false;
     }
 
     // draws the static game board
