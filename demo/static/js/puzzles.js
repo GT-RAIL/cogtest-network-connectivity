@@ -10,7 +10,7 @@ function emptyPuzzle() {
 }
 
 // generates the puzzle (simple horizontal line)
-function generatePuzzle1() {
+function generateSimpleLine() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.11, .5];
     var node_2_loc = [.24, .5];
@@ -48,7 +48,7 @@ function generatePuzzle1() {
 }
 
 // generates the puzzle (simple arc)
-function generatePuzzle2() {
+function generateSimpleArc() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.2, .5];
     var node_2_loc = [.2402, .65];
@@ -86,7 +86,7 @@ function generatePuzzle2() {
 }
 
 // generates the puzzle (complex sideways arc)
-function generatePuzzle3() {
+function generateComplexArc() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.1, .77];
     var node_2_loc = [.11, .9];
@@ -191,7 +191,7 @@ function generatePuzzle3() {
 
 
 // generates the puzzle (tri star)
-function generatePuzzle4() {
+function generateTristar() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.07, .92];
     var node_2_loc = [.16, .91];
@@ -326,7 +326,7 @@ function generatePuzzle4() {
 }
 
 // generates the puzzle (gold standard cross)
-function generatePuzzle5() {
+function generateSimpleCross() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.2, .5];
     var node_2_loc = [.35, .5];
@@ -374,7 +374,7 @@ function generatePuzzle5() {
 }
 
 // generates the puzzle (complicated triangles/squares)
-function generatePuzzle6() {
+function generateVeryComplexArc() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.1, .77];
     var node_2_loc = [.11, .9];
@@ -487,7 +487,7 @@ function generatePuzzle6() {
 }
 
 // generates the puzzle (large cross)
-function generatePuzzle7() {
+function generateLinearCross() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.05, .5];
     var node_2_loc = [.2, .5];
@@ -543,7 +543,7 @@ function generatePuzzle7() {
 }
 
 // generates the puzzle (wavy cross)
-function generatePuzzle8() {
+function generateWavyLinearCross() {
     // first record the location of each node, as an x% y% of the canvas
     var node_1_loc = [.07, .5];
     var node_2_loc = [.21, .68];

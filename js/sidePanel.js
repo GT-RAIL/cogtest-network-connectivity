@@ -18,25 +18,29 @@ function sidePanelIntroduction() {
     var text2 = document.createElement("div"); text2.innerHTML = "<br>A hidden network connects all the squares. When a square is selected, the squares connected to it will flip colors. Then the squares connected to those squares will flip. And so on until the entire network has flipped.";
     var text3 = document.createElement("div"); text3.innerHTML = "<br>You will first watch this happen for several different starting squares, so you can learn the hidden network.";
     var text4 = document.createElement("div"); text4.innerHTML = "<br>Then you will choose the square that flips the network in the least steps.";
-    var text5 = document.createElement("div"); text5.innerHTML = "<br>When you are ready, enter your Mechanical Turk ID below:";
+    var text5 = document.createElement("div"); text5.innerHTML = "<br>When you are ready, click \"Next\" below.";
     
-
     content.appendChild(text1);
     content.appendChild(text2);
     content.appendChild(text3);
     content.appendChild(text4);
     content.appendChild(text5);
 
+    document.getElementById("networks-next-button").style.display = "block";
+
+    // if we collect the ID from the user, set that up here
     if (gameboard.askId) {
+        text5.innerHTML = "<br>When you are ready, enter your Mechanical Turk ID below:";
         var workerIdInput = document.createElement("input"); workerIdInput.type = "text"; workerIdInput.id = "worker-id-input";
         content.appendChild(workerIdInput);
         workerIdInput.oninput = () => {
             document.getElementById("networks-next-button").style.display = "block";
             workerId = workerIdInput.value;
         };
+        document.getElementById("networks-next-button").style.display = "none";
     }
 
-    document.getElementById("networks-next-button").style.display = "none";
+    
     document.getElementById("networks-next-button").innerHTML = "Next";
 
     

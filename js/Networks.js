@@ -110,8 +110,11 @@ class Networks {
         // if we are in the user response state, record the score
         if (this.state == "response") {
             this.scores.push(this.hops - this.optimalHops);
+            log({"stage": "networks", "action": "score from round #" + this.round, "score": this.hops - this.optimalHops, "name": this.puzzleName});
+
             this.selections.push(this.selectedNode);
             this.round += 1;
+            log({"stage": "networks", "action": "ready for node selection #" + this.round, "name": this.puzzleName});
         }
 
         // either way, unflip all the nodes
@@ -139,6 +142,7 @@ class Networks {
         // if we are in the observation state and have no more observations to see, switch to the response state
         if (this.state == "observation" && this.observationNodes.length == 0) {
             this.state = "response";
+            log({"stage": "networks", "action": "ready for node selection #" + this.round, "name": this.puzzleName});
             sidePanelResponse();  // display the user response side panel
         }
 
@@ -164,8 +168,10 @@ class Networks {
         if (this.puzzle < this.puzzles.length) {  // if we still have puzzles left, generate the next one
             this.puzzles[this.puzzle]();  // run the function that sets up the next puzzle, established in index.html
             // set up the optimal nodes
-            for (let i = 0; i < this.optimalNodes.length; i++) {
-                this.nodes[this.optimalNodes[i]].optimalNode = true;
+            if (this.showOptimalNodes) {
+                for (let i = 0; i < this.optimalNodes.length; i++) {
+                    this.nodes[this.optimalNodes[i]].optimalNode = true;
+                }
             }
             this.puzzleName = this.puzzles[this.puzzle].name;
             this.propagating = true;  // start the next puzzle
