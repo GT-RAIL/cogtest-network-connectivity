@@ -12,7 +12,9 @@ We have previous found a link between performance in this test and performance i
 
 ### How to Use ###
 
-If you are looking to adapt this pre-test for your own work, look into the adjustments below. We ask that you cite this GitHub repository if you use, modify, or create derivatives of this codebase for your own work.
+The test is browser-based, and this repository contains the HTML, CSS, and JavaScript files.
+
+If you are looking to adapt this test for your own work, look into the adjustments below. We ask that you cite this GitHub repository if you use, modify, or create derivatives of our code for your own work.
 
 Recommended adjustments:
 1. In **index.html**, make sure you are importing the CSS/JS scripts correctly as per your webserver, an example is provided for Flask.
