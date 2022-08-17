@@ -5,14 +5,16 @@ Maintained by Jack Kolb (kolb@gatech.edu), copyright (C) 2021 RAIL Lab @ Georgia
 
 ### Overview ###
 
-This test quantifies a user's network inference cognitive trait, or their ability to learn and apply an understanding of a hidden network connecting nodes. The user plays a series of puzzles where they are given a set of nodes, they watch the network propagate color from several example starting nodes, and then they identify the starting node to propagate color through the network in the least time steps. This requires them to understand how nodes are connected to solve each puzzle.
+This test quantifies a user's network inference cognitive skill, or their ability to learn and apply an understanding of a hidden network connecting nodes. The user plays a series of puzzles where they are given a set of nodes, they watch the network propagate color from several example starting nodes, and then they identify the starting node to propagate color through the network in the least time steps. This requires them to understand how nodes are connected to solve each puzzle.
 
 We have previous found a link between performance in this test and performance in robot tasks involving a user's understanding of networked robots.
 
 
 ### How to Use ###
 
-If you are looking to adapt this pre-test for your own work, look into the adjustments below. We ask that you cite this GitHub repository if you use, modify, or create derivatives of this codebase for your own work.
+The test is browser-based, and this repository contains the HTML, CSS, and JavaScript files.
+
+If you are looking to adapt this test for your own work, look into the adjustments below. We ask that you cite this GitHub repository if you use, modify, or create derivatives of our code for your own work.
 
 Recommended adjustments:
 1. In **index.html**, make sure you are importing the CSS/JS scripts correctly as per your webserver, an example is provided for Flask.
