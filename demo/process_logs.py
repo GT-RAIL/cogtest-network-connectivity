@@ -24,6 +24,7 @@ for p in os.listdir(path):
         # process the actions
         for a in range(len(actions)):
             action = actions[a]
+            #print("---- ", a, action)
 
             if not record:
                 if "next button introduction" in action:
@@ -37,16 +38,17 @@ for p in os.listdir(path):
             
             # if ready to select a node, set current puzzle and start time
             if "ready for node selection" in action:
-                if "round complete" in actions[a-2] or "round complete" in actions[a-1] or "round complete" in actions[a+1] or "round complete" in actions[a+2]:
-                    continue
+                #if "round complete" in actions[a-1] or "round complete" in actions[a+1] or "round complete" in actions[a+2]:
+                #    continue
 
                 # get the current puzzle
                 currentPuzzle = action.split("'")[11]
+                #print("added puzzle", "line", a, currentPuzzle)
 
                 # get the selection round
                 selection_round = int(action.split("'")[7].split("#")[1])
 
-                # if on selection round #3 or higher, ignore (logged at end of round)
+                # if on selection round #3 or higher, or puzzle already made, ignore (logged at end of round)
                 if selection_round >= 3:
                     continue
                 
@@ -54,18 +56,26 @@ for p in os.listdir(path):
                 if selection_round == 0:
                     selections[currentPuzzle] = [-1, -1, -1]
                     selection_times[currentPuzzle] = [0, 0, 0]
-                    start_times[currentPuzzle] = [0, 0, 0]
+                    start_times[currentPuzzle] = [0.0, 0.0, 0.0]
                     scores[currentPuzzle] = [0, 0, 0]
 
                 # set the round start time
-                start_times[currentPuzzle][selection_round] = int(action.split(".")[0])
+                start_times[currentPuzzle][selection_round] = float((action.split(",")[0]))
+            #print("nodeselection?", "ready for node selection" in action)
             
             # if selected a node, set data
             if "node selected" in action:
                 node_index = int(action.split("'")[14].replace(" ", "").replace(":", "").replace(",", ""))
                 puzzle = action.split("'")[7]
+
+                #print(">>>", selections[puzzle])
+                if selections[puzzle][-1] != -1:
+                    continue
+
+                selection_round = selections[puzzle].index(-1)
+                #print("puzzle", puzzle, selections.keys(), selection_round)
                 selections[puzzle][selection_round] = node_index
-                selection_times[currentPuzzle][selection_round] = int(action.split(".")[0])
+                selection_times[puzzle][selection_round] = float(action.split(",")[0])
             
             # if getting a score report, set the data
             if "score from round" in action:
@@ -104,8 +114,11 @@ for p in os.listdir(path):
                 if selected_node == -1:
                     selection_time = 0
                 elif selection_times[puzzle][selection_round] != 0:
-                    selection_time = selection_times[puzzle][selection_round] - start_times[puzzle][selection_round]
-                
+                    selection_time = round(selection_times[puzzle][selection_round] - start_times[puzzle][selection_round], 2)
+                    if selection_time < 0:
+                        print("!!", puzzle, selection_round, selection_times[puzzle][selection_round], start_times[puzzle][selection_round])
+
+                #print("---", puzzle, start_times)
                 # add the entry to the list
                 round_entry = ",".join([str(selected_node), str(score), str(selection_time)])
                 round_entries.append(round_entry)
@@ -136,7 +149,9 @@ with open("ni_test_output.csv", "w") as f:
 
     # write each worker data string
     for line in csv_lines:
-        f.write("\n" + line)
+        num_attributes = 163
+        if len(line.split(",")) == num_attributes:
+            f.write("\n" + line)
 
 print("Complete!")
 

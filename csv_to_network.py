@@ -34,7 +34,7 @@ def determineOptimalHops(network):
 output = ""
 
 # for each network, make the function
-for network_name in ["Large", "Baseline", "TreeShuffle", "TreeShortcut", "Tree", "Sparse", "Small", "Semilong", "Shortcut", "Halo"]:
+for network_name in ["Large2", "Baseline2", "TreeShuffle2", "TreeShortcut2", "Tree2", "Sparse2", "Small2", "Semilong2", "Shortcut2", "Halo2", "ComplexArc2", "WavyLinearCross2", "VeryComplexArc2", "LinearCross2", "Hexstar", "Fourstar", "ComplexArc2"]:
 
     print("Generating network " + network_name)
 
