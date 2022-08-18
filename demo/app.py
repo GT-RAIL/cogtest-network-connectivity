@@ -20,7 +20,7 @@ def index():
 
 
 # Klishin test route
-@app.route("/klishin", methods=["GET"])
+@app.route("/upenn", methods=["GET"])
 def klishin():
     showAnswers = str(request.args.get("showAnswers"))
     if showAnswers != "true":
