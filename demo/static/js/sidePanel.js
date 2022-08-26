@@ -164,6 +164,7 @@ function sidePanelEndGame(score) {
 
     var text1 = document.createElement("div"); text1.innerHTML = "<br>Congratulations! You completed this minigame!";
     var text2 = document.createElement("div"); text2.innerHTML = "<br>Please enter the following code into Prolific: <b>C12HPL9Y</b>. You can now close this tab.";
+    text2.style.userSelect = "text"
 
     // after 5 seconds, redirect the user to the experiment portal
     window.setTimeout(() => {
