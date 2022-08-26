@@ -30,7 +30,7 @@ function sidePanelIntroduction() {
 
     // if we collect the ID from the user, set that up here
     if (gameboard.askId) {
-        text5.innerHTML = "<br>When you are ready, enter your Mechanical Turk ID below:";
+        text5.innerHTML = "<br>When you are ready, enter your Prolific ID below:";
         var workerIdInput = document.createElement("input"); workerIdInput.type = "text"; workerIdInput.id = "worker-id-input";
         content.appendChild(workerIdInput);
         workerIdInput.oninput = () => {
@@ -163,7 +163,7 @@ function sidePanelEndGame(score) {
     document.getElementById("SidePanel").style.backgroundColor = "lightyellow";
 
     var text1 = document.createElement("div"); text1.innerHTML = "<br>Congratulations! You completed this minigame!";
-    var text2 = document.createElement("div"); text2.innerHTML = "<br>Please enter the following code into Mechanical Turk: <b>102030</b>. You can now close this tab.";
+    var text2 = document.createElement("div"); text2.innerHTML = "<br>Please enter the following code into Prolific: <b>C12HPL9Y</b>. You can now close this tab.";
 
     // after 5 seconds, redirect the user to the experiment portal
     window.setTimeout(() => {
