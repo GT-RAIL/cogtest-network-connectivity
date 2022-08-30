@@ -81,7 +81,6 @@ function sidePanelObservation() {
     beginButton.onclick = function () {
         log({"stage": "networks", "action": "side-panel-click", "object": "begin networks"});
         beginButton.style.display = "none";
-        text3.innerHTML = "<br>Watch and understand the network!";
         networks.start();
     };
 }
